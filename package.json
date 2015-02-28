@@ -5,7 +5,7 @@
   "main": "app.js",
   "engines": {
     "npm": "1.4.23"
-  }
+  },
   "dependencies": {
     "consolidate": "^0.10.0",
     "express": "^4.8.7",
