@@ -2,7 +2,7 @@
   "name": "givenera",
   "version": "0.0.1",
   "description": "Make helping others a life style.",
-  "main": "app.js",
+  "main": "server.js",
   "engines": {
     "npm": "1.4.23"
   },

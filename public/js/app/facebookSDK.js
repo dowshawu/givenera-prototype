@@ -11,7 +11,7 @@ define(function () {
 	    });
 	  };
 
-	  // Maybe it should be moved to another place like app.js and bootstrap.js
+	  // Maybe it should be moved to another place like server.js and bootstrap.js
 	  (function(d, s, id){
 	     var js, fjs = d.getElementsByTagName(s)[0];
 	     if (d.getElementById(id)) {return;}
