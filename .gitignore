@@ -1,7 +1,6 @@
-node_modules/
+node_modules/*
 .idea/
-routers/login.js
-.gitignore
+/routers/login.js
+/.gitignore
 public/js/view/header-action-view.js
-config/
-
+config/*
