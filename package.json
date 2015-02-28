@@ -4,20 +4,23 @@
   "description": "Make helping others a life style.",
   "main": "server.js",
   "engines": {
+    "node": "0.10.31",
     "npm": "1.4.23"
   },
   "dependencies": {
     "consolidate": "^0.10.0",
     "express": "^4.8.7",
-    "jade": "^1.6.0",
-    "passport": "^0.2.1"
+    "jade": "^1.6.0"
+//    "passport": "^0.2.1",
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Chia-Yu Wu",
   "license": "Private",
-  "engines": {
-    "node": "0.10.31"
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dowshawu/givenera-prototype.git"
   }
 }

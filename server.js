@@ -18,7 +18,7 @@ var app = express();
 var router = require('./routers/router');
 
 // Globals
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 5000;
 //var dbUrl = 'mongodb://localhost/glassdoor_test';
 
 // Locals: Application local variables are provided to all templates rendered within the application.
