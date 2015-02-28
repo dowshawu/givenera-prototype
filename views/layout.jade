@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        title Foo
+        meta(charset="utf-8")
+        link(rel='stylesheet', href='/public/bower_components/bootstrap/dist/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/public/bower_components/fontawesome/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/public/css/overrides.css')
+        link(rel='stylesheet', href='/public/css/global.css')
+        link(rel='stylesheet', href='/public/css/modal.css')
+        link(rel='stylesheet', href='/public/css/widgets.css')
+
+        script(data-main="public/js/main" src="public/bower_components/requirejs/require.js")
+    body
+        include components/header
+
+        div#js-globalModalRegion
+            block content
+        div#js-overlayModalRegion
+
+        include components/footer

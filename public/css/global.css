@@ -1,0 +1,259 @@
+body {
+    background: white;
+    font-family: "Helvetica","Arial","Verdana","sans-serif"
+}
+
+#main-content {
+    min-height: 600px;
+    margin-top: 20px;
+}
+
+.module {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 0 14px 0;
+    padding: 14px;
+    background-color: white;
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px -1px rgba(153,153,153,0.6);
+}
+
+.module h3 {
+    margin-bottom: 20px;
+}
+
+.text-green {
+    color: green;
+}
+
+/* Buttons */
+.btn-google {
+    color: #fff;
+    background-color: #dd4b39;
+    border-color: rgba(0, 0, 0, 0.2)
+}
+
+.btn-google:hover, .btn-google:focus, .btn-google:active, .btn-google.active, .open > .dropdown-toggle.btn-google {
+    color: #fff;
+    background-color: #c23321;
+    border-color: rgba(0, 0, 0, 0.2)
+}
+
+.btn-google:active, .btn-google.active, .open > .dropdown-toggle.btn-google {
+    background-image: none
+}
+
+.btn-google.disabled, .btn-google[disabled], fieldset[disabled] .btn-google, .btn-google.disabled:hover, .btn-google[disabled]:hover, fieldset[disabled] .btn-google:hover, .btn-google.disabled:focus, .btn-google[disabled]:focus, fieldset[disabled] .btn-google:focus, .btn-google.disabled:active, .btn-google[disabled]:active, fieldset[disabled] .btn-google:active, .btn-google.disabled.active, .btn-google[disabled].active, fieldset[disabled] .btn-google.active {
+    background-color: #dd4b39;
+    border-color: rgba(0, 0, 0, 0.2)
+}
+
+.btn-google .badge {
+    color: #dd4b39;
+    background-color: #fff
+}
+
+.btn-facebook {
+    color: #fff;
+    background-color: #3b5998;
+    border-color: rgba(0, 0, 0, 0.2)
+}
+
+.btn-facebook:hover, .btn-facebook:focus, .btn-facebook:active, .btn-facebook.active, .open > .dropdown-toggle.btn-facebook {
+    color: #fff;
+    background-color: #2d4373;
+    border-color: rgba(0, 0, 0, 0.2)
+}
+
+.btn-facebook:active, .btn-facebook.active, .open > .dropdown-toggle.btn-facebook {
+    background-image: none
+}
+
+.btn-facebook.disabled, .btn-facebook[disabled], fieldset[disabled] .btn-facebook, .btn-facebook.disabled:hover, .btn-facebook[disabled]:hover, fieldset[disabled] .btn-facebook:hover, .btn-facebook.disabled:focus, .btn-facebook[disabled]:focus, fieldset[disabled] .btn-facebook:focus, .btn-facebook.disabled:active, .btn-facebook[disabled]:active, fieldset[disabled] .btn-facebook:active, .btn-facebook.disabled.active, .btn-facebook[disabled].active, fieldset[disabled] .btn-facebook.active {
+    background-color: #3b5998;
+    border-color: rgba(0, 0, 0, 0.2)
+}
+
+.btn-facebook .badge {
+    color: #3b5998;
+    background-color: #fff
+}
+
+/* globalheader */
+.globalheader {
+    z-index: 20;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #444;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border-radius: 0;
+}
+
+.globalheader-brand {
+    padding-right: 10px;
+    height: 45px;
+}
+
+.globalheader-brand a.logo {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+.globalheader-brand .fa {
+    font-size: 24px;
+    margin-right: 5px;
+    -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -moz-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.globalheader-brand .fa:hover {
+    opacity: 0.65;
+}
+
+.globalheader-nav {
+    padding: 0;
+    margin: 0;
+}
+
+.globalheader-nav li {
+    display: inline-block;
+    font-size: 16px;
+    text-shadow: 1px 1px 0 rgba(64,64,64,0.3);
+    height: 100%;
+    margin: 0;
+    padding: 0 15px;
+}
+
+.globalheader-nav li.active {
+    background-color: #6fa121;
+    box-shadow: inset 0 1px 1px 0 rgba(64, 64, 64, 0.4);
+}
+
+.globalheader-nav li.active:hover {
+    background-color: #6fa121;
+}
+
+.globalheader-nav li a {
+    display: block;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+}
+
+.globalheader-nav li:hover {
+    text-decoration: none;
+    outline-width: 0;
+    color: white;
+}
+
+.globalheader-actions a {
+    display: inline-block;
+    padding: 0 10px;
+    color: white;
+    -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -moz-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.globalheader-actions a:hover {
+    opacity: 0.65;
+}
+
+/* hero unit */
+.hero {
+
+}
+
+.hero h1 {
+    padding: 10px 0 !important;
+    font-weight: 300;
+    font-size: 45px;
+    text-align: center;
+    margin: 50px auto;
+}
+
+form#hero-search {
+    padding: 0 50px;
+    margin-bottom: 110px;
+}
+
+.hero-input {
+    width: 92%;
+    height: 50px;
+    float: left;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 0;
+    border: 1px solid #eee;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.hero-input:focus {
+    outline: none;
+    background: #faffbd;
+    border: 1px solid #eee;
+}
+
+.hero .btn-search {
+    float: left;
+    height: 50px;
+    width: 8%;
+    border-radius: 0;
+    font-size: 20px;
+    background: #eee;
+    border: 0;
+}
+
+.hero .btn-search:active {
+    outline: none;
+}
+
+.hero .sub-title,
+.hero .keyword-list-text {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    color: #999;
+    font-style: italic;
+}
+
+.hero .sub-title {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.hero .keyword-list-text {
+    font-style: normal;
+}
+
+.keyword-list-text a {
+    color: #999;
+}
+
+/* footer */
+.footer hr {
+    max-width: 1024px;
+}
+
+.footer-text {
+    font-size: 12px;
+    font-weight: 300;
+    color: #999;
+}
+
+.footer-text a {
+    color: #999;
+}
+
+.footer-text a:hover {
+    color: black;
+}

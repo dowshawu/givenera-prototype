@@ -1,0 +1,25 @@
+{
+  "name": "givenera",
+  "version": "0.0.1",
+  "description": "Make helping others a life style.",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "consolidate": "^0.10.0",
+    "express": "^4.8.7",
+    "jade": "^1.6.0",
+    "passport": "^0.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chia-Yu Wu",
+  "license": "Private",
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}

@@ -1,0 +1,13 @@
+/* Overrides for twitter bootstrap */
+.container {
+    width: 1024px;
+}
+
+.no-padding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
