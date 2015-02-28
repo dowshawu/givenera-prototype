@@ -2,5 +2,5 @@ node_modules/*
 .idea/
 /routers/login.js
 /.gitignore
-public/js/view/header-action-view.js
+/public/js/views/header-action-view.js
 config/*
