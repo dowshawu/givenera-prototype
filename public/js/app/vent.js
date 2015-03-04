@@ -1,3 +1,7 @@
-/**
- * Created by dowshawu on 15/2/28.
- */
+define(function (require) {
+   'use strict';
+    var Backbone = require('backbone');
+    require('backbone.wreqr');
+
+    return new Backbone.Wreqr.EventAggregator();
+});

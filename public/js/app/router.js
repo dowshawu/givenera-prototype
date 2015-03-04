@@ -13,14 +13,14 @@ define(function (require) {
         },
 
         showLoginModal: function () {
-            if (!app.getOverlayModalRegion().currentView) {
-                app.getOverlayModalRegion().show(new LoginModalLayout({activeTab: 'login'}));
+            if (!app.getOverlayRegion().currentView) {
+                app.getOverlayRegion().show(new LoginModalLayout({activeTab: 'login'}));
             }
         },
 
         showSignupModal: function () {
-            if (!app.getOverlayModalRegion().currentView) {
-                app.getOverlayModalRegion().show(new LoginModalLayout({activeTab: 'signup'}));
+            if (!app.getOverlayRegion().currentView) {
+                app.getOverlayRegion().show(new LoginModalLayout({activeTab: 'signup'}));
             }
         }
     });

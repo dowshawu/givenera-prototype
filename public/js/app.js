@@ -11,6 +11,7 @@ define(function () {
         me: null,
         router: null,
         userModel: null, // todo
-        behaviors: {}
+        behaviors: {},
+        vent: null
     };
 });

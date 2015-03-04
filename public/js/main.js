@@ -4,6 +4,7 @@ require.config({
         // global scope
         backbone: '../bower_components/backbone/backbone',
         'backbone.marionette': '../bower_components/marionette/lib/backbone.marionette',
+        'backbone.wreqr': '../bower_components/backbone.wreqr/lib/backbone.wreqr',
         jquery: '../bower_components/jquery/dist/jquery',
         underscore: '../bower_components/underscore/underscore',
         d3: '../bower_components/d3/d3',

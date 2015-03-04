@@ -4,8 +4,7 @@ define(function (require) {
     var $ = require('jquery');
     var Backbone = require('backbone');
     require('backbone.marionette');
-    //var overlay = require('behavior/overlay-behavior');
-    // var Parse = require('parse');
+    require('backbone.wreqr');
 
     var AlertWidget = require('views/widgets/alert-widget');
 
@@ -54,6 +53,9 @@ define(function (require) {
         initialize: function (options) {
             options.activeTab = options.activeTab || this.viewState.activeTab;
             this.viewState.activeTab = options.activeTab;
+            app.vent.on("foo", function() {
+                console.log("foo event");
+            });
         },
 
         onRender: function () {
@@ -78,7 +80,8 @@ define(function (require) {
         },
 
         updateHeadingText: function () {
-            var text = (this.viewState.activeTab === 'signup')? "註冊" : "登入";
+            var text = (this.viewState.activeTab === 'signup')? "Sign-up" : "Sign-in";
+
             $(this.ui.headingText).html(text + "馬上看到百萬筆薪水＆面試資訊！");
         },
 
@@ -103,13 +106,13 @@ define(function (require) {
         },
 
         loginWithFacebook: function () {
+            app.vent.trigger("foo");
             // window.location.href = '/login/facebook';
         },
 
         onSubmit: function () {
             var username = this.ui.emailInput.val();
             var password = this.ui.passwordInput.val();
-
             (this.viewState.activeTab === 'signup')? this.signup(username, password) : this.login(username, password);
         },
 

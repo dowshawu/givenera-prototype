@@ -9,7 +9,7 @@ define(function (require) {
     return Backbone.Marionette.ItemView.extend({
         ui: {
             signupLink: ".js-signupLink",
-            loginLink: '.js-loginLink'
+            loginLink: ".js-loginLink"
         },
 
         events: {
