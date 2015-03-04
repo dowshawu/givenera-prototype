@@ -4,6 +4,7 @@ define(function (require) {
     require('backbone.marionette');
     var app = require('app');
     var headerActionViewUserTpl = require('tpl!tpls/header-action-view-user.tpl');
+    var appContentLayoutView = require('views/app-content-layout');
 
     return Backbone.Marionette.LayoutView.extend({
         template: headerActionViewUserTpl,
@@ -16,6 +17,13 @@ define(function (require) {
         events: {
             "click @ui.addReview": "showAddReview",
             "click @ui.logoutLink": "logout"
+        },
+
+        onRender: function() {
+            console.log('test before Render');
+            console.log(app.getContentRegion().hasView());
+            app.getContentRegion().empty();
+            //app.getContentRegion().show(new appContentLayoutView());
         },
 
         showAddReview: function () {

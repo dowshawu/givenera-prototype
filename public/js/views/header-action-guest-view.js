@@ -4,7 +4,8 @@ define(function (require) {
     require('backbone.marionette');
     var app = require('app');
     var headerActionViewGuestTpl = require('tpl!tpls/header-action-view-guest.tpl');
-    var LoginModalLayout = require('views/login-modal-layout');
+    var loginModalLayout = require('views/login-modal-layout');
+    //var guestWelcomeView = require('views/guest-welcome-view');
 
     return Backbone.Marionette.ItemView.extend({
         template: headerActionViewGuestTpl,
@@ -19,15 +20,19 @@ define(function (require) {
             "click @ui.loginLink": "showLoginModal"
         },
 
+        //afterRender: function () {
+        //    app.getContentRegion().show(new guestWelcomeView());
+        //},
+
         showLoginModal: function () {
             if (!app.getOverlayRegion().currentView) {
-                app.getOverlayRegion().show(new LoginModalLayout({activeTab: 'login'}));
+                app.getOverlayRegion().show(new loginModalLayout({activeTab: 'login'}));
             }
         },
 
         showSignupModal: function () {
             if (!app.getOverlayRegion().currentView) {
-                app.getOverlayRegion().show(new LoginModalLayout({activeTab: 'signup'}));
+                app.getOverlayRegion().show(new loginModalLayout({activeTab: 'signup'}));
             }
         }
     });
