@@ -4,7 +4,7 @@ define(function (require) {
     require('backbone.marionette');
     require('backbone.wreqr');
     var app = require('app');
-    // var Parse = require('parse');
+    //var Parse = require('parse');
     var HeaderActionGuestView = require('views/header-action-guest-view');
     var HeaderActionUserView = require('views/header-action-user-view');
     var GuestWelcomeView = require('views/guest-welcome-view');
@@ -14,6 +14,12 @@ define(function (require) {
         var application = new Backbone.Marionette.Application();
         app.me = application;
 
+        application.addInitializer(function () {
+            Parse.initialize("kOs0abVTIwGAl3pJmHjvpuczLdv0ds0DuFWIXLZz", "v8lbja7VgYEYtbJ7UTHJnEteBzFTy1FfsGkCOBcs");
+            require(['models/User']);
+            app.userModel = Parse.User.current();
+
+        });
         application.addInitializer(function () {
             Backbone.Marionette.Behaviors.behaviorsLookup = function () {
                 return app.behaviors;
@@ -25,7 +31,6 @@ define(function (require) {
             var vent = new Backbone.Wreqr.EventAggregator();
             app.vent = vent;
         });
-        Parse.initialize("kOs0abVTIwGAl3pJmHjvpuczLdv0ds0DuFWIXLZz", "v8lbja7VgYEYtbJ7UTHJnEteBzFTy1FfsGkCOBcs");
         // require(['app/facebookSDK']);
 
         application.addInitializer(function () {
@@ -54,7 +59,8 @@ define(function (require) {
 
         application.addInitializer(function () {
             if(Parse.User.current()) {
-                console.log("user login");
+                //app.userModel = Parse.User.current();
+                console.log(Parse.User.current());
                 app.getHeaderRegion().show(new HeaderActionUserView());
                 app.getContentRegion().show(new AppContentLayout());
             } else {

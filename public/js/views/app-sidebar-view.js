@@ -1,27 +1,30 @@
 define(function (require) {
     'use strict';
     var Backbone = require('backbone');
+    var app = require('app');
     require('backbone.marionette');
 
-    var appSidebarViewTpl = require('tpl!tpls/app-sidebar-view.tpl');
+    var AppSidebarViewTpl = require('tpl!tpls/app-sidebar-view.tpl');
 
     return Backbone.Marionette.LayoutView.extend({
-        template: appSidebarViewTpl,
+        template: AppSidebarViewTpl,
+
+        className: 'sidebar',
 
         ui: {
-            overviewLink: ".sidebar-overview",
-            friendsLink: ".sidebar-friends",
-            mapLink: ".sidebar-map"
+            overviewLink: ".js-sidebar-overview",
+            friendsLink: ".js-sidebar-friends",
+            mapLink: ".js-sidebar-map"
         },
 
-        event: {
+        events: {
             "click @ui.overviewLink": "clickOverview",
             "click @ui.friendsLink": "clickFriends",
             "click @ui.mapLink": "clickMap"
         },
 
         clickOverview: function () {
-            console.log('click Overview');
+            app.vent.trigger('main:show:main');
         },
 
         clickFriends: function () {

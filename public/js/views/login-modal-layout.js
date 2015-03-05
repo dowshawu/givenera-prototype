@@ -82,7 +82,7 @@ define(function (require) {
         updateHeadingText: function () {
             var text = (this.viewState.activeTab === 'signup')? "Sign-up" : "Sign-in";
 
-            $(this.ui.headingText).html(text + "馬上看到百萬筆薪水＆面試資訊！");
+            $(this.ui.headingText).html(text + " to start share the loves");
         },
 
         updateFormState: function () {
@@ -96,12 +96,12 @@ define(function (require) {
                 this.ui.form.attr('action', 'signup');
                 this.ui.signupPolicy.show();
                 this.ui.loginHelper.hide();
-                this.ui.formBtn.html('立即註冊！');
+                this.ui.formBtn.html('Sign-up Now');
             } else {
                 this.ui.form.attr('action', 'login');
                 this.ui.signupPolicy.hide();
                 this.ui.loginHelper.show();
-                this.ui.formBtn.html('登入');
+                this.ui.formBtn.html('Sign-in');
             }
         },
 

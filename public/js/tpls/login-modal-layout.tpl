@@ -3,18 +3,18 @@
     <i class="fa fa-close app-modal-close-btn js-closeBtn"></i>
     <div class="app-modal-content">
         <div class="tab">
-            <div class="tab-item js-tabItem js-signupTab" data-tab-id="signup">註冊</div>
-            <div class="tab-item js-tabItem js-loginTab" data-tab-id="login">登入</div>
+            <div class="tab-item js-tabItem js-signupTab" data-tab-id="signup">Register</div>
+            <div class="tab-item js-tabItem js-loginTab" data-tab-id="login">Sign-in</div>
         </div>
 
         <div class="content">
             <div class="heading js-headingText">
-                登入馬上看到百萬筆薪水＆面試資訊！
+                Sign-in to share the loves
             </div>
 
             <div class="social-login">
-                <button type="button" class="btn btn-google js-googleBtn"><i class="fa fa-google-plus pull-left"></i>使用 Google 登入</button>
-                <button type="button" class="btn btn-facebook js-facebookBtn"><i class="fa fa-facebook pull-left"></i>使用 Facebook 登入</button>
+                <button type="button" class="btn btn-google js-googleBtn"><i class="fa fa-google-plus pull-left"></i>Google sign-in</button>
+                <button type="button" class="btn btn-facebook js-facebookBtn"><i class="fa fa-facebook pull-left"></i>Facebook sign-in</button>
             </div>
 
             <div class="privacy-text">
@@ -43,7 +43,7 @@
                             </label>
                         </div>
                         <div class="col-md-6">
-                            <a href="#forgot" class="pull-right">忘記密碼？</a>
+                            <a href="#forgot" class="pull-right">forget password？</a>
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                 <div class="signup-policy js-signupPolicy">
                     創造帳號的同時代表您同意了本網站的: <br><a href="#">使用者規範</a>以及<a href="#">隱私權政策</a>
                 </div>
-                <button type="button" class="btn btn-primary js-formBtn">登入</button>
+                <button type="button" class="btn btn-primary js-formBtn">Sign-in</button>
             </form>
         </div>
     </div>
