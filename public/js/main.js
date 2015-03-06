@@ -9,7 +9,7 @@ require.config({
         underscore: '../bower_components/underscore/underscore',
         d3: '../bower_components/d3/d3',
         parse: '../bower_components/parse/parse',
-        // bootstrap: '../bower_components/bootstrap'
+        bootstrap: '../bower_components/bootstrap/dist/js/bootstrap',
         // require loading helpers
         json: 'lib/require-json',
         text: 'lib/require-text',

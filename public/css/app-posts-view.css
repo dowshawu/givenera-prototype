@@ -1,0 +1,18 @@
+.app-collection-post-text {
+    padding: 10px
+}
+
+.app-collection-post-container, .well {
+    position: relative;
+    background-color: #FBFBFB;
+    border: 1px solid #DDDDDD;
+    box-shadow: 0px 1px 1px #ECECEC;
+}
+
+.posts-grid {
+    margin: 10px;
+}
+
+.expendLink:hover {
+    cursor: pointer;
+}

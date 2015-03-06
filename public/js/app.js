@@ -12,6 +12,7 @@ define(function () {
         router: null,
         userModel: null, // todo
         behaviors: {},
-        vent: null
+        vent: null,
+        reqres: null
     };
 });

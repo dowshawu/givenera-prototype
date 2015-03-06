@@ -4,11 +4,9 @@ define(function (require) {
     require('backbone.marionette');
     require('backbone.wreqr');
     var app = require('app');
-    //var Parse = require('parse');
+
     var HeaderActionGuestView = require('views/header-action-guest-view');
     var HeaderActionUserView = require('views/header-action-user-view');
-    var GuestWelcomeView = require('views/guest-welcome-view');
-    var AppContentLayout = require('views/app-content-layout');
 
     var initApplication = function () {
         var application = new Backbone.Marionette.Application();
@@ -16,7 +14,6 @@ define(function (require) {
 
         application.addInitializer(function () {
             Parse.initialize("kOs0abVTIwGAl3pJmHjvpuczLdv0ds0DuFWIXLZz", "v8lbja7VgYEYtbJ7UTHJnEteBzFTy1FfsGkCOBcs");
-            require(['models/User']);
             app.userModel = Parse.User.current();
 
         });
@@ -30,6 +27,8 @@ define(function (require) {
         application.addInitializer(function () {
             var vent = new Backbone.Wreqr.EventAggregator();
             app.vent = vent;
+            var reqres = new Backbone.Wreqr.RequestResponse();
+            app. reqres = reqres;
         });
         // require(['app/facebookSDK']);
 
@@ -60,14 +59,12 @@ define(function (require) {
         application.addInitializer(function () {
             if(Parse.User.current()) {
                 //app.userModel = Parse.User.current();
-                console.log(Parse.User.current());
+                //console.log(Parse.User.current());
                 app.getHeaderRegion().show(new HeaderActionUserView());
-                app.getContentRegion().show(new AppContentLayout());
             } else {
                 // todo: redirect to the intro page for the user later.
                 console.log("guest visit");
                 app.getHeaderRegion().show(new HeaderActionGuestView());
-                app.getContentRegion().show(new GuestWelcomeView());
             }
         });
 

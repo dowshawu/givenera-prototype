@@ -1,0 +1,1 @@
+<div id="app-posts-collection-view"> </div>

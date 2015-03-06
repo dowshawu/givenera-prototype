@@ -1,10 +1,19 @@
 define( function (require) {
    'use strict';
 
-    var Parse = require('parse');
-
     return Parse.Object.extend({
-        className = 'Post'
+        className: 'Posts',
 
+        defaults: {
+            Summary: "no summary",
+            Title: "Missing Title",
+            createdAt: 0,
+            postBy: '',
+            Image: 'no image'
+        }
+
+        //initialize: function () {
+        //
+        //}
     });
 });

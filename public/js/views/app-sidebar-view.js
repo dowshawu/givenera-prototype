@@ -24,11 +24,13 @@ define(function (require) {
         },
 
         clickOverview: function () {
-            app.vent.trigger('main:show:main');
+            console.log('click Overview');
+            app.vent.trigger('main:show:collectionPost');
         },
 
         clickFriends: function () {
             console.log('click Friends');
+            app.vent.trigger('main:show:main');
         },
 
         clickMap: function () {

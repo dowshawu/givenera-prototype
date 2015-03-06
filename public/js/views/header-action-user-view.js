@@ -3,9 +3,14 @@ define(function (require) {
     var Backbone = require('backbone');
     require('backbone.marionette');
     var app = require('app');
+
+    var PostCollection = require('collections/PostCollection');
+    var Post = require('models/Post');
+
     var HeaderActionViewUserTpl = require('tpl!tpls/header-action-view-user.tpl');
 
-    var testView = require('views/app-sidebar-view');
+    var AppContentLayout = require('views/app-content-layout');
+
 
     return Backbone.Marionette.LayoutView.extend({
         template: HeaderActionViewUserTpl,
@@ -22,14 +27,26 @@ define(function (require) {
             "click @ui.logoutLink": "logout"
         },
 
-        //Render: function() {
-        //    console.log('test before Render');
-        //    console.log(app.getContentRegion().hasView());
-        //    app.getContentRegion().empty();
-        //    //app.getContentRegion().show(new appContentLayoutView());
-        //},
+        initialize: function () {
+            var self = this;
+            this.posts = new PostCollection();
+            var dataPool = {
+                posts: this.posts
+            };
+            this.posts.query = new Parse.Query(Post);
+            this.posts.query.equalTo("postBy", Parse.User.current());
+            this.posts.fetch();
 
-        showProfileView: function() {
+            app.reqres.setHandler("get:data:posts", function () {
+                return dataPool.posts;
+            });
+        },
+
+        onBeforeShow: function () {
+            app.getContentRegion().show(new AppContentLayout());
+        },
+
+        showProfileView: function () {
             console.log('click user');
             app.vent.trigger('main:show:profile');
         },

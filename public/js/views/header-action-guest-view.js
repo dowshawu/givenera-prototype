@@ -5,7 +5,9 @@ define(function (require) {
     var app = require('app');
 
     var HeaderActionViewGuestTpl = require('tpl!tpls/header-action-view-guest.tpl');
+
     var LoginModalLayout = require('views/login-modal-layout');
+    var GuestWelcomeView = require('views/guest-welcome-view');
 
     return Backbone.Marionette.ItemView.extend({
         template: HeaderActionViewGuestTpl,
@@ -18,6 +20,10 @@ define(function (require) {
         events: {
             "click @ui.signupLink": "showSignupModal",
             "click @ui.loginLink": "showLoginModal"
+        },
+
+        onShow: function () {
+            app.getContentRegion().show(new GuestWelcomeView());
         },
 
         showLoginModal: function () {
