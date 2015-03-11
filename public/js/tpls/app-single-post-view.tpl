@@ -4,16 +4,17 @@
     <div class="app-single-post-content">
         <div class="panel panel-primary pricing-big">
             <div class="panel-heading"></div>
-            <div class="panel-body panel-body">
+            <div class="panel-body app-single-post-panel-body">
                 <div>
-                    <img class="app-single-post-img" src="public/img/smartadmin/img/demo/s1.jpg">
+                    <img class="app-single-post-img img-responsive center-block" src=<%=ImageUrl%> >
                 </div>
                 <div class="app-single-post-detail-container">
                     <ul class="list-unstyled text-left">
-                        <li><strong>Title</strong></li>
-                        <li>this is detail</li>
+                        <li><strong><%=Title%></strong></li>
+                        <li><%=Summary%></li>
                     </ul>
                 </div>
+                <button class="btn btn-warning pull-right js-editPost">Edit</button>
             </div>
         </div>
     </div>

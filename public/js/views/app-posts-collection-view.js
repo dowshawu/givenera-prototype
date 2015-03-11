@@ -4,7 +4,6 @@ define(function (require) {
     var Backbone = require('backbone');
     require('backbone.marionette');
     var app = require('app');
-    var PostsCollection = require('collections/PostCollection');
     var AppPostsPostView = require('views/app-posts-post-view');
 
     var AppPostsCollectionViewTpl = require('tpl!tpls/app-posts-collection-view.tpl');
@@ -16,9 +15,9 @@ define(function (require) {
 
         childViewContainerContainer: '#app-posts-collection-view',
 
-        onRender: function () {
-            console.log('rendering');
+        initialize : function () {
+            this.listenTo(this.collection, 'add', this.render);
         }
 
     });
-})
+});

@@ -24,17 +24,16 @@ define(function (require) {
         },
 
         clickOverview: function () {
-            console.log('click Overview');
             app.vent.trigger('main:show:collectionPost');
         },
 
         clickFriends: function () {
-            console.log('click Friends');
-            app.vent.trigger('main:show:main');
+            //todo: friend function
+            app.vent.trigger('main :show:main');
         },
 
         clickMap: function () {
-            console.log('click Map');
+            //todo: map
         }
     });
 });

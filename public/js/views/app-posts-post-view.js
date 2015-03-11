@@ -24,13 +24,29 @@ define(function (require) {
             "click @ui.singlePostLink": "showSinglePostView"
         },
 
-        initialize : function() {
+        initialize : function () {
+            var self = this;
             this.listenTo(this.model, 'change', this.render, this);
+            app.vent.on("post:show:single"+this.model.get("Title"), function () {
+               self.showSinglePostView();
+            });
+        },
+
+        serializeData: function () {
+            return {
+                ImageUrl: this.model.get("Image").url(),
+                Title: this.model.get("Title"),
+                Summary: this.model.get("Summary")
+            };
+        },
+
+        onRender: function () {
+            //console.log(this.model);
+
         },
 
         showSinglePostView: function () {
-            console.log('expend');
-            app.getOverlayRegion().show(new AppSinglePostView());
+            app.getOverlayRegion().show(new AppSinglePostView({model: this.model}));
         }
     });
-})
+});

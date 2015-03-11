@@ -5,8 +5,8 @@ define(function (require) {
     require('backbone.wreqr');
     var app = require('app');
 
-    var HeaderActionGuestView = require('views/header-action-guest-view');
-    var HeaderActionUserView = require('views/header-action-user-view');
+    var HeaderActionGuestView = require('views/guest/header-action-guest-view');
+    var HeaderActionUserView = require('views/user/header-action-user-view');
 
     var initApplication = function () {
         var application = new Backbone.Marionette.Application();

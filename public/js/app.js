@@ -13,6 +13,7 @@ define(function () {
         userModel: null, // todo
         behaviors: {},
         vent: null,
-        reqres: null
+        reqres: null,
+        currentPost: null
     };
 });

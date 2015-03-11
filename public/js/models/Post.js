@@ -5,11 +5,10 @@ define( function (require) {
         className: 'Posts',
 
         defaults: {
-            Summary: "no summary",
-            Title: "Missing Title",
-            createdAt: 0,
-            postBy: '',
-            Image: 'no image'
+            Summary: null,
+            Title: null,
+            postBy: null,
+            Image: null
         }
 
         //initialize: function () {

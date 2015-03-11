@@ -23,7 +23,6 @@ define(function (require) {
             var self = this;
             var Posts = app.reqres.request("get:data:posts");
             this.Posts = Posts;
-            console.log(Posts);
             app.vent.on('main:show:profile', function () {
                 self.showUserProfileView();
             });

@@ -21,6 +21,10 @@
     float: none;
 }
 
+.app-single-post-panel-body {
+    padding-bottom: 0px;
+}
+
 .app-single-post-btn {
     font-size: 18px;
     float: right;
@@ -45,6 +49,21 @@
 }
 
 .app-single-post-img {
-    width: 100%;
+    position: relative;
+    width: auto;
+    max-height: 600px;
+    margin: 0px auto;
 }
 
+/*Edit/Create form overrides */
+
+.app-single-post-form-img-container {
+    min-height: 300px;
+    max-height: 610px;
+    border: 5px dashed #0000FF;
+}
+
+.choose-photo-button {
+    position: absolute;
+    z-index: 10;
+}

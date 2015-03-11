@@ -5,8 +5,6 @@ define(function (require) {
     var app = require('app');
     //var Parse = require('parse');
 
-    //var UserModel = require('models/User');
-
     var AppUserProfileViewTpl = require('tpl!tpls/app-user-profile-view.tpl');
 
     return Backbone.Marionette.ItemView.extend({
@@ -28,7 +26,7 @@ define(function (require) {
                 joinDate: (app.userModel.get('createdAt')===undefined)? "We don't know" : app.userModel.get('createdAt'),
                 state: (app.userModel.get('state')===undefined)? null : app.userModel.get('state'),
                 zip: (app.userModel.get('zip')===undefined)? null : app.userModel.get('zip')
-            }
+            };
         },
 
         ui: {
@@ -40,10 +38,7 @@ define(function (require) {
         },
 
         showEditProfileView: function () {
-
             alert('todo: edit view');
-
         }
-
     });
-})
+});

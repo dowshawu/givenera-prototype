@@ -4,7 +4,7 @@ define(function (require) {
     require('backbone.marionette');
     var app = require('app');
 
-    var GuestWelcomeViewTpl = require('tpl!tpls/guest-welcome-view.tpl');
+    var GuestWelcomeViewTpl = require('tpl!tpls/guest/guest-welcome-view.tpl');
     var LoginModalLayout = require('views/login-modal-layout');
 
     return Backbone.Marionette.ItemView.extend({

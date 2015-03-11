@@ -7,28 +7,28 @@ define(function (require) {
     var PostCollection = require('collections/PostCollection');
     var Post = require('models/Post');
 
-    var HeaderActionViewUserTpl = require('tpl!tpls/header-action-view-user.tpl');
+    var HeaderActionViewUserTpl = require('tpl!tpls/user/header-action-view-user.tpl');
 
     var AppContentLayout = require('views/app-content-layout');
+    var AppSinglePostNewView = require('views/app-single-post-new-view');
 
 
     return Backbone.Marionette.LayoutView.extend({
         template: HeaderActionViewUserTpl,
 
         ui: {
-            addReview: ".js-navbarWriteReview",
+            newPost: ".js-navbarWriteReview",
             profileLink: ".js-navbarProfile",
             logoutLink: ".js-navbarLogout"
         },
 
         events: {
-            "click @ui.addReview": "showAddReview",
+            "click @ui.newPost": "newPost",
             "click @ui.profileLink": "showProfileView",
             "click @ui.logoutLink": "logout"
         },
 
         initialize: function () {
-            var self = this;
             this.posts = new PostCollection();
             var dataPool = {
                 posts: this.posts
@@ -47,12 +47,11 @@ define(function (require) {
         },
 
         showProfileView: function () {
-            console.log('click user');
             app.vent.trigger('main:show:profile');
         },
 
-        showAddReview: function () {
-            alert('add review // todo');
+        newPost: function () {
+            app.getOverlayRegion().show(new AppSinglePostNewView({model: new Post()}));
         },
 
         logout: function () {

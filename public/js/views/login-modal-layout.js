@@ -9,7 +9,6 @@ define(function (require) {
     var AlertWidget = require('views/widgets/alert-widget');
 
     var loginModalViewTpl = require('tpl!tpls/login-modal-layout.tpl');
-    // var headerActionViewUser = require('tpl!tpls/header-action-view-user.tpl');
 
     return Backbone.Marionette.LayoutView.extend({
         template: loginModalViewTpl,
@@ -124,7 +123,7 @@ define(function (require) {
                     window.location.href = "/";
                     self.close();
                 },
-                error: function(user, error) {
+                error: function () {
                     // console.log('error', error);
                     self.showAlert("Invalid Username or Password", "danger");
                 }
