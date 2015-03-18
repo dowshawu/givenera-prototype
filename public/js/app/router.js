@@ -8,9 +8,11 @@ define(function (require) {
 
     return Backbone.Router.extend({
         routes: {
+            '':'home',
             'login': 'showLoginModal',
             'signup': 'showSignupModal'
         },
+
 
         showLoginModal: function () {
             if (!app.getOverlayRegion().currentView) {

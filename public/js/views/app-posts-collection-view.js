@@ -9,14 +9,17 @@ define(function (require) {
     var AppPostsCollectionViewTpl = require('tpl!tpls/app-posts-collection-view.tpl');
 
     return Backbone.Marionette.CompositeView.extend({
-        template: AppPostsCollectionViewTpl,
 
+        template: AppPostsCollectionViewTpl,
+        //className: "app-posts-collection-view",
         childView: AppPostsPostView,
 
         childViewContainerContainer: '#app-posts-collection-view',
 
         initialize : function () {
-            this.listenTo(this.collection, 'add', this.render);
+            this.listenTo(this.collection, 'add', function () {
+                console.log('Collection Added');
+            });
         }
 
     });

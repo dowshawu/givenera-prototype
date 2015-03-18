@@ -29,6 +29,7 @@ define(function (require) {
         },
 
         initialize: function () {
+            this.postCollection = options.postCollection;
             this.posts = new PostCollection();
             var dataPool = {
                 posts: this.posts

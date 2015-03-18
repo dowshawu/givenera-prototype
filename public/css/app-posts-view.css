@@ -1,5 +1,5 @@
 .app-collection-post-text {
-    padding: 10px
+    margin: 10px;
 }
 
 .app-collection-post-container, .well {
@@ -11,8 +11,22 @@
 
 .posts-grid {
     margin: 10px;
+    width: 48%;
 }
 
 .expendLink:hover {
     cursor: pointer;
+    color: #000066;
+}
+
+.expendLink {
+    position: absolute;
+    right: 20px;
+    bottom: 0px;
+    margin: 0px;
+}
+
+.img-posts {
+    width: 100%;
+    height: auto;
 }

@@ -10,6 +10,7 @@ define(function (require) {
     var AppMainView = require('views/app-main-view');
     var AppPostsCollectionView = require('views/app-posts-collection-view');
     var AppUserProfileView = require('views/app-user-profile-view');
+    var HeaderActionUserView = require('views/user/header-action-user-view');
 
     return  Backbone.Marionette.LayoutView.extend({
         template: AppContentLayoutTpl,
@@ -32,11 +33,15 @@ define(function (require) {
             app.vent.on('main:show:collectionPost', function () {
                 self.showPostsCollectionView({collection: Posts});
             });
+            app.vent.on('main:show:', function (view) {
+                self.showMainView(view);
+            });
         },
 
         onBeforeShow: function () {
             this.showSidebarView();
             this.showPostsCollectionView({collection: this.Posts});
+
         },
 
         showUserProfileView: function () {
@@ -47,7 +52,7 @@ define(function (require) {
             this.getRegion('mainRegion').show(new AppPostsCollectionView(Posts));
         },
 
-        showMainView: function () {
+        showMainView: function (view) {
             this.getRegion('mainRegion').show(new AppMainView());
         },
 

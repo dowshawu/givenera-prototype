@@ -6,6 +6,7 @@ define( function (require) {
     var app = require('app');
 
     var AppSinglePostViewTpl = require('tpl!tpls/app-single-post-edit.tpl');
+    var Post = require('models/Post');
     var AppSinglePostView = require('views/app-single-post-view');
 
     return Backbone.Marionette.ItemView.extend({
@@ -33,7 +34,8 @@ define( function (require) {
         },
 
         initialize: function () {
-            this.updatePhotoReader;
+            this.updatePhotoReader();
+            this.model = new Post();
         },
 
         serializeData: function () {
@@ -52,6 +54,7 @@ define( function (require) {
             }
             else {
                 this.model.save();
+                this.collection.add(this.model);
             }
         },
 
@@ -61,7 +64,7 @@ define( function (require) {
                 var reader = new FileReader();
                 reader.onload = function (e) {
                     self.ui.previewPhoto.attr('src', e.target.result);
-                }
+                };
                 reader.readAsDataURL(this.ui.uploadPhoto.get(0).files[0]);
             } else {
                 this.ui.previewPhoto.attr('src', null);

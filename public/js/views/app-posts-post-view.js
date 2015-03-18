@@ -13,7 +13,7 @@ define(function (require) {
 
     return Backbone.Marionette.CompositeView.extend({
         tagName: 'div',
-        className: 'row',
+        className: 'well posts-grid col-md-6',
         template: AppPostsPostviewTpl,
 
         ui: {

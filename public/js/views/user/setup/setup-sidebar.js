@@ -4,7 +4,7 @@ define(function (require) {
     var app = require('app');
     require('backbone.marionette');
 
-    var AppSidebarViewTpl = require('tpl!tpls/app-sidebar-view.tpl');
+    var AppSidebarViewTpl = require('tpl!tpls/user/setup/setup-sidebar-view.tpl');
 
     return Backbone.Marionette.LayoutView.extend({
         template: AppSidebarViewTpl,
