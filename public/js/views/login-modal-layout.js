@@ -27,7 +27,7 @@ define(function (require) {
             googleBtn: '.js-googleBtn',
             facebookBtn: '.js-facebookBtn',
             form: '.js-form',
-            emailInput: '.js-emailInput',
+            usernameInput: '.js-usernameInput',
             passwordInput: '.js-passwordInput',
             rememberCheckbox: '.js-rememberCheckbox',
             signupPolicy: '.js-signupPolicy',
@@ -86,8 +86,8 @@ define(function (require) {
 
         updateFormState: function () {
             // clear existing data upon switch tab
-            this.ui.emailInput.blur();
-            this.ui.emailInput.val('');
+            this.ui.usernameInput.blur();
+            this.ui.usernameInput.val('');
             this.ui.passwordInput.blur();
             this.ui.passwordInput.val('');
 
@@ -110,7 +110,7 @@ define(function (require) {
         },
 
         onSubmit: function () {
-            var username = this.ui.emailInput.val();
+            var username = this.ui.usernameInput.val();
             var password = this.ui.passwordInput.val();
             (this.viewState.activeTab === 'signup')? this.signup(username, password) : this.login(username, password);
         },

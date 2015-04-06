@@ -3,7 +3,7 @@
     <i class="fa fa-close app-modal-close-btn js-closeBtn"></i>
     <div class="app-modal-content">
         <div class="tab">
-            <div class="tab-item js-tabItem js-signupTab" data-tab-id="signup">Register</div>
+            <div class="tab-item js-tabItem js-signupTab" data-tab-id="signup">Sign-up</div>
             <div class="tab-item js-tabItem js-loginTab" data-tab-id="login">Sign-in</div>
         </div>
 
@@ -29,7 +29,7 @@
 
             <form class="js-form" action="" method="POST">
                 <div class="form-group">
-                    <input type="email" class="form-control js-emailInput" id="email" name="email" placeholder="Email Address">
+                    <input type="email" class="form-control js-usernameInput" id="username" name="username" placeholder="Username">
                 </div>
                 <div class="form-group">
                     <input type="password" class="form-control js-passwordInput" id="password" name="password" placeholder="Password">
