@@ -9,7 +9,7 @@ define(function (require) {
 
     var AppPostsPostviewTpl = require('tpl!tpls/app-posts-post-view.tpl');
 
-    var AppSinglePostView = require('views/app-single-post-view');
+    var AppSinglePostView = require('views/user/post/single-post-view');
 
     return Backbone.Marionette.CompositeView.extend({
         tagName: 'div',
@@ -27,7 +27,7 @@ define(function (require) {
         initialize : function () {
             var self = this;
             this.listenTo(this.model, 'change', this.render, this);
-            app.vent.on("post:show:single"+this.model.get("Title"), function () {
+            app.vent.on("post:show:single"+this.model.id, function () {
                self.showSinglePostView();
             });
         },

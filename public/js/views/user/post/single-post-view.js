@@ -1,5 +1,5 @@
 define( function (require) {
-   'use strict';
+    'use strict';
 
     var Backbone = require('backbone');
     require('backbone.marionette');
@@ -13,6 +13,10 @@ define( function (require) {
         className: "single-post-modal modal-layout",
 
         template: AppSinglePostViewTpl,
+
+        behaviors: {
+            overlay: {}
+        },
 
         ui: {
             editPost: ".js-editPost"

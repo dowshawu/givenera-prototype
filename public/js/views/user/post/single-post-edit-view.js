@@ -12,6 +12,10 @@ define(function (require) {
 
         template: AppSinglePostEditTpl,
 
+        behaviors: {
+            overlay: {}
+        },
+
         ui: {
             savePostButton: ".js-savePost",
             cancelButton: ".js-cancel",
@@ -39,11 +43,11 @@ define(function (require) {
             this.model.set('Title', this.ui.titleInput.val().trim());
             this.model.set('Summary', this.ui.summaryInput.val().trim());
             this.model.save();
-            app.vent.trigger("post:show:single"+this.model.get("Title"));
+            app.vent.trigger("post:show:single"+this.model.id);
         },
 
         clickCancel: function () {
-            app.vent.trigger("post:show:single"+this.model.get("Title"));
+            app.vent.trigger("post:show:single"+this.model.id);
         },
 
         attachPhoto: function () {

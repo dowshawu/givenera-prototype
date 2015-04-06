@@ -28,7 +28,7 @@ define(function (require) {
         },
 
         clickFriends: function () {
-            app.vent.trigger('main:show:main');
+            app.vent.trigger('main:show:friendsList');
             //todo: friend function
         },
 

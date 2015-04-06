@@ -10,6 +10,7 @@ require.config({
         d3: '../bower_components/d3/d3',
         parse: '../bower_components/parse/parse',
         bootstrap: '../bower_components/bootstrap/dist/js/bootstrap',
+        typeahead: '../bower_components/typeahead.js/dist/typeahead.jquery',
         // require loading helpers
         json: 'lib/require-json',
         text: 'lib/require-text',
@@ -24,7 +25,8 @@ require.config({
         'backbone.marionette': ['backbone'],
         'underscore': {
             exports: '_'
-        }
+        },
+        'typeahead': ['jquery']
     }
 });
 

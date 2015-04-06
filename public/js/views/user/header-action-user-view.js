@@ -29,22 +29,27 @@ define(function (require) {
         },
 
         initialize: function () {
-            this.postCollection = options.postCollection;
-            this.posts = new PostCollection();
-            var dataPool = {
-                posts: this.posts
+            this.allPosts = new PostCollection();
+            this.personalPosts = new PostCollection();
+            this.dataPool = {
+                allPosts: this.allPosts,
+                personalPosts: this.personalPosts
             };
-            this.posts.query = new Parse.Query(Post);
-            this.posts.query.equalTo("postBy", Parse.User.current());
-            this.posts.fetch();
+            this.allPosts.query = new Parse.Query(Post);
+            this.allPosts.query.equalTo("postBy", Parse.User.current());
+            this.allPosts.query.descending("updatedAt");
+            this.allPosts.fetch();
 
-            app.reqres.setHandler("get:data:posts", function () {
-                return dataPool.posts;
+            app.reqres.setHandler("get:data:allPosts", function () {
+                return this.dataPool.allPosts;
+            });
+            app.reqres.setHandler("get:data:personalPosts", function () {
+                return this.dataPool.personalPosts;
             });
         },
 
         onBeforeShow: function () {
-            app.getContentRegion().show(new AppContentLayout());
+            app.getContentRegion().show(new AppContentLayout({dataPool: this.dataPool}));
         },
 
         showProfileView: function () {
@@ -52,7 +57,7 @@ define(function (require) {
         },
 
         newPost: function () {
-            app.getOverlayRegion().show(new AppSinglePostNewView({model: new Post()}));
+            app.getOverlayRegion().show(new AppSinglePostNewView({dataPool: this.dataPool}));
         },
 
         logout: function () {

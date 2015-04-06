@@ -10,7 +10,7 @@ define(function (require) {
     var AppMainView = require('views/app-main-view');
     var AppPostsCollectionView = require('views/app-posts-collection-view');
     var AppUserProfileView = require('views/app-user-profile-view');
-    var HeaderActionUserView = require('views/user/header-action-user-view');
+    var AppUserFriendsCollectionView = require('views/user/friend/friends-collection-view');
 
     return  Backbone.Marionette.LayoutView.extend({
         template: AppContentLayoutTpl,
@@ -20,10 +20,10 @@ define(function (require) {
             mainRegion: '.js-app-content-main'
         },
 
-        initialize: function() {
+        initialize: function(options) {
             var self = this;
-            var Posts = app.reqres.request("get:data:posts");
-            this.Posts = Posts;
+            var Posts = options.dataPool.allPosts;
+            //this.Posts = Posts;
             app.vent.on('main:show:profile', function () {
                 self.showUserProfileView();
             });
@@ -31,16 +31,22 @@ define(function (require) {
                 self.showMainView();
             });
             app.vent.on('main:show:collectionPost', function () {
-                self.showPostsCollectionView({collection: Posts});
+                self.showPostsCollectionView({collection: options.dataPool.allPosts});
             });
             app.vent.on('main:show:', function (view) {
                 self.showMainView(view);
             });
+            app.vent.on('sidebar:show', function () {
+                self.showSidebarView({dataPool: options.dataPool});
+            });
+            app.vent.on('main:show:friendsList', function () {
+                self.showUserFriendsListView();
+            });
         },
 
         onBeforeShow: function () {
-            this.showSidebarView();
-            this.showPostsCollectionView({collection: this.Posts});
+            app.vent.trigger('sidebar:show');
+            app.vent.trigger('main:show:collectionPost');
 
         },
 
@@ -56,8 +62,12 @@ define(function (require) {
             this.getRegion('mainRegion').show(new AppMainView());
         },
 
-        showSidebarView: function () {
-            this.getRegion('sidebarRegion').show(new AppSidebarView());
+        showUserFriendsListView: function (Friends) {
+            this.getRegion('mainRegion').show(new AppUserFriendsCollectionView(Friends));
+        },
+
+        showSidebarView: function (dataPool) {
+            this.getRegion('sidebarRegion').show(new AppSidebarView(dataPool));
         }
 
     });

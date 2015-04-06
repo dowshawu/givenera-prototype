@@ -5,9 +5,9 @@ define( function (require) {
     require('backbone.marionette');
     var app = require('app');
 
-    var AppSinglePostViewTpl = require('tpl!tpls/app-single-post-edit.tpl');
+    var AppSinglePostViewTpl = require('tpl!tpls/user/post/single-post-edit-view.tpl');
     var Post = require('models/Post');
-    var AppSinglePostView = require('views/app-single-post-view');
+    //var AppSinglePostView = require('views/app-single-post-view');
 
     return Backbone.Marionette.ItemView.extend({
         className: "single-post-modal modal-layout",
@@ -20,7 +20,6 @@ define( function (require) {
 
         ui: {
             savePostButton: ".js-savePost",
-            cancelButton: ".js-cancel",
             uploadPhoto: ".js-photoUpload",
             previewPhoto: ".js-photoPreview",
             titleInput: ".js-title",
@@ -30,12 +29,12 @@ define( function (require) {
         events: {
             "change @ui.uploadPhoto": "attachPhoto",
             "click @ui.savePostButton": "clickSavePost",
-            "click @ui.cancelButton": "clickCancel"
         },
 
-        initialize: function () {
-            this.updatePhotoReader();
+        initialize: function (options) {
+            //this.updatePhotoReader();
             this.model = new Post();
+            this.optionCollection = options.dataPool.allPosts;
         },
 
         serializeData: function () {
@@ -46,7 +45,7 @@ define( function (require) {
             };
         },
 
-        clickSavePost: function () {
+        clickSavePost: function (options) {
             var post = this.validateInput();
             if( post===false ) {
                 // Todo: alert function;
@@ -54,7 +53,7 @@ define( function (require) {
             }
             else {
                 this.model.save();
-                this.collection.add(this.model);
+                this.optionCollection.add(this.model);
             }
         },
 
@@ -78,26 +77,31 @@ define( function (require) {
                 this.ui.previewPhoto.hide();
             } else {
                 this.ui.previewPhoto.show();
+                this.uploadPhoto();
+            }
+        },
+
+        uploadPhoto: function () {
+            var fileUploadControl = this.ui.uploadPhoto.get(0);
+            if ( fileUploadControl.files.length>0 ) {
+                var file = fileUploadControl.files[0];
+                var name = "photo.jpg";
+
+                this.photoParseFile = new Parse.File(name, file);
+                this.photoParseFile.save().then(function () {
+                    console.log("file uploaded");
+                }, function(error) {
+                    alert("error");
+                });
             }
         },
 
         validateInput: function () {
             var fileUploadControl = this.ui.uploadPhoto.get(0);
-            console.log(fileUploadControl);
             if ( fileUploadControl.files.length>0 ) {
-                var file = fileUploadControl.files[0];
-                var name = "photo.jpg";
-
-                var parseFile = new Parse.File(name, file);
-                parseFile.save().then(function () {
-                    console.log("file uploaded");
-                }, function(error) {
-                    alert("error");
-                });
-
                 this.model.set("Title", this.ui.titleInput.val().trim());
                 this.model.set("Summary", this.ui.summaryInput.val().trim());
-                this.model.set("Image", parseFile);
+                this.model.set("Image", this.photoParseFile);
                 this.model.set("postBy", Parse.User.current());
                 return true;
             } else {
