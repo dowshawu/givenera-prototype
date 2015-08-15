@@ -5,10 +5,7 @@ define( function (require) {
         className: 'Friends',
 
         defaults: {
-            Summary: null,
-            Title: null,
-            postBy: null,
-            Image: null
+            Status: "unknown"
         }
 
         //initialize: function () {

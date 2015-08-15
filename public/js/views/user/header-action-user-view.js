@@ -31,6 +31,24 @@ define(function (require) {
         initialize: function () {
             this.allPosts = new PostCollection();
             this.personalPosts = new PostCollection();
+            Parse.Cloud.run("getPostToUser", {
+                success: function (results) {
+                    console.log(results);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+            Parse.Cloud.run("getDailyBread", {
+                success: function (results) {
+                    console.log(results);
+                    //this.allPosts = results;
+                    this.allPosts = new PostCollection(data);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
             this.dataPool = {
                 allPosts: this.allPosts,
                 personalPosts: this.personalPosts

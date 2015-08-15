@@ -17,10 +17,6 @@
                 <button type="button" class="btn btn-facebook js-facebookBtn"><i class="fa fa-facebook pull-left"></i>Facebook sign-in</button>
             </div>
 
-            <div class="privacy-text">
-                您在本站的所有瀏覽以及評論都是匿名的
-            </div>
-
             <div class="hr text-center">
                 <span class="center">Or</span>
             </div>
@@ -38,18 +34,13 @@
                 <div class="form-group login-helper js-loginHelper">
                     <div class="row">
                         <div class="col-md-6">
-                            <label>
-                                <input type="checkbox" id="remember" class="js-rememberCheckbox" name="remember"> 下次自動登入
-                            </label>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="#forgot" class="pull-right">forget password？</a>
+                            <a href="#forgot" class="pull-right js-forgetPassword">forget password？</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="signup-policy js-signupPolicy">
-                    創造帳號的同時代表您同意了本網站的: <br><a href="#">使用者規範</a>以及<a href="#">隱私權政策</a>
+                    By signing up, I accept the <br><a href="#">Terms of Service</a>以及<a href="#">Privacy Policy</a>
                 </div>
                 <button type="button" class="btn btn-primary js-formBtn">Sign-in</button>
             </form>
